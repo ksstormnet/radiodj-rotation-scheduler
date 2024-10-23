@@ -1,0 +1,93 @@
+{
+    "project": {
+      "name": "radiodj-rotation-scheduler",
+      "status": "in_development",
+      "structure": {
+        "implemented_classes": {
+          "RotationElement": {
+            "file": "src/models/rotation_element.py",
+            "status": "complete",
+            "test_coverage": "100%",
+            "description": "Base class representing a single element in a rotation (song, commercial, jingle, etc)",
+            "key_features": [
+              "Type validation using ElementType enum",
+              "Position and category management",
+              "Separation rules for commercials and music",
+              "Serialization/deserialization support",
+              "Equality comparison",
+              "String representation",
+              "Copy functionality"
+            ]
+          },
+          "Rotation": {
+            "file": "src/models/rotation.py",
+            "status": "complete",
+            "test_coverage": "pending",
+            "description": "Class representing a complete hour-long rotation",
+            "key_features": [
+              "Management of ordered RotationElements",
+              "Commercial break identification",
+              "Music set analysis",
+              "Category counting and statistics",
+              "Rotation comparison functionality",
+              "Element management (add/remove)",
+              "Serialization support"
+            ]
+          }
+        },
+        "pending_classes": {
+          "DatabaseManager": {
+            "file": "src/managers/database_manager.py",
+            "description": "Handles database operations and backups"
+          },
+          "RotationValidator": {
+            "file": "src/validators/rotation_validator.py",
+            "description": "Validates rotation compliance with rules"
+          },
+          "RotationGenerator": {
+            "file": "src/generators/rotation_generator.py",
+            "description": "Generates compliant rotations"
+          },
+          "DisplayManager": {
+            "file": "src/managers/display_manager.py",
+            "description": "Handles output formatting and comparisons"
+          },
+          "CLIManager": {
+            "file": "src/managers/cli_manager.py",
+            "description": "Manages command line interface"
+          },
+          "LogManager": {
+            "file": "src/managers/log_manager.py",
+            "description": "Handles logging operations"
+          }
+        }
+      },
+      "environment": {
+        "python_version": "3.11+",
+        "key_dependencies": [
+          "pytest",
+          "pytest-cov",
+          "mysql-connector-python",
+          "python-dotenv"
+        ],
+        "development_tools": {
+          "testing": "pytest with coverage reporting",
+          "version_control": "git with GitHub integration",
+          "virtual_environment": "venv"
+        }
+      },
+      "configuration_files": {
+        "pyproject.toml": "Test and coverage configuration",
+        "requirements.txt": "Project dependencies",
+        ".env.example": "Template for database credentials",
+        ".gitignore": "Standard Python gitignore patterns",
+        "run_tests.sh": "Test execution script with coverage reporting"
+      }
+    },
+    "next_steps": [
+      "Complete Rotation class test coverage",
+      "Implement RotationValidator",
+      "Implement DatabaseManager",
+      "Implement RotationGenerator"
+    ]
+  }
