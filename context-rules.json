@@ -1,0 +1,253 @@
+{
+    "categories": [
+      {
+        "id": 1,
+        "name": "Music",
+        "subcategories": [
+          {
+            "id": 45,
+            "name": "CE - Core Early - 78 to 83"
+          },
+          {
+            "id": 46,
+            "name": "CM - Core Mid - 84 to 88" 
+          },
+          {
+            "id": 47,
+            "name": "CL - Core Late - 89 to 93"
+          },
+          {
+            "id": 48,
+            "name": "I - Image"
+          },
+          {
+            "id": 49,
+            "name": "G - Pre-78"
+          },
+          {
+            "id": 50,
+            "name": "SCh - Christian"
+          },
+          {
+            "id": 51,
+            "name": "SCo - Country"
+          },
+          {
+            "id": 52,
+            "name": "SD - Disco"
+          },
+          {
+            "id": 53,
+            "name": "M - Modern - Post -94"
+          },
+          {
+            "id": 54,
+            "name": "SP - Pop"
+          },
+          {
+            "id": 55,
+            "name": "SR - Rock"
+          },
+          {
+            "id": 56,
+            "name": "PB - Power Ballad"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Station IDs",
+        "subcategories": [
+          {
+            "id": 41,
+            "name": "ID Jingle"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Jingles",
+        "subcategories": [
+          {
+            "id": 34,
+            "name": "tM - to Music"
+          },
+          {
+            "id": 35,
+            "name": "B - Between"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Promos",
+        "subcategories": [
+          {
+            "id": 57,
+            "name": "TOH"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Commercials",
+        "subcategories": [
+          {
+            "id": 30,
+            "name": "30"
+          },
+          {
+            "id": 31,
+            "name": "15"
+          },
+          {
+            "id": 32,
+            "name": "60"
+          }
+        ]
+      }
+    ],
+    "rules": {
+      "music_categories": {
+        "required_per_hour": {
+          "CE": 2,
+          "CM": 2,
+          "CL": 2
+        },
+        "order_constraints": {
+          "date_based_after_jingle": false,
+          "back_to_back_SCo_SCh": false
+        },
+        "minimum_per_hour": {
+          "M": 1,
+          "G": 1
+        },
+        "maximum_per_hour": {
+          "PB": 2,
+          "SD": 1
+        }
+      },
+      "music_sets": {
+        "first_two_sets": {
+          "patterns": [
+            {
+              "name": "Pattern I",
+              "order": [
+                "I",
+                "Music",
+                "Jingle",
+                "Music",
+                "Music",
+                "Jingle",
+                "Music"
+              ],
+              "usage_constraints": {
+                "can_use_in_first_set": true,
+                "can_use_in_second_set": false,
+                "transition_rules": {
+                  "G_or_SD_in_seventh": true,
+                  "PB_or_M_in_seventh": true
+                }
+              }
+            },
+            {
+              "name": "Pattern II",
+              "order": [
+                "I",
+                "Music",
+                "Music",
+                "Jingle",
+                "Music",
+                "Music",
+                "Music"
+              ],
+              "usage_constraints": {
+                "can_use_in_first_set": true,
+                "can_use_in_second_set": true
+              }
+            },
+            {
+              "name": "Pattern III",
+              "order": [
+                "I",
+                "Music",
+                "Music",
+                "Jingle",
+                "Music",
+                "Jingle",
+                "Music"
+              ],
+              "usage_constraints": {
+                "can_use_in_first_set": true,
+                "can_use_in_second_set": true
+              }
+            }
+          ]
+        },
+        "third_set": {
+          "order": [
+            "I",
+            "Music",
+            "Music",
+            "Jingle",
+            "Music (SP, SR, D, or Co)",
+            "PB"
+          ]
+        }
+      },
+      "commercial_sets": {
+        "patterns": [
+          {
+            "name": "Pattern 631",
+            "order": [
+              "60",
+              "30",
+              "15"
+            ]
+          },
+          {
+            "name": "Pattern 633",
+            "order": [
+              "60",
+              "30",
+              "30" 
+            ]
+          },
+          {
+            "name": "Pattern 613",
+            "order": [
+              "60",
+              "15",
+              "30"
+            ]
+          },
+          {
+            "name": "Pattern 63",
+            "order": [
+              "60",
+              "30"
+            ]
+          },
+          {
+            "name": "Pattern 61",
+            "order": [
+              "60",
+              "15"
+            ]
+          },
+          {
+            "name": "Pattern 331",
+            "order": [
+              "30",
+              "30",
+              "15"
+            ]
+          }
+        ],
+        "length_constraints": {
+          "total_duration_range": [75, 120],
+          "consecutive_sets_must_differ": true
+        }
+      }
+    }
+  }

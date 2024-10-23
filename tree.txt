@@ -1,0 +1,50 @@
+# tree -I '\.git|*cache*|venv|coverage_html'
+.
+├── context-rules.json
+├── LICENSE.txt
+├── pyproject.toml
+├── README.md
+├── requirements.txt
+├── run-tests.sh
+├── src
+│   ├── generators
+│   │   ├── __init__.py
+│   │   └── rotation_generator.py
+│   ├── __init__.py
+│   ├── main.py
+│   ├── managers
+│   │   ├── cli_manager.py
+│   │   ├── database_manager.py
+│   │   ├── display_manager.py
+│   │   ├── __init__.py
+│   │   ├── log_manager.py
+│   │   └── rotation_manager.py
+│   ├── models
+│   │   ├── __init__.py
+│   │   ├── rotation_element.py
+│   │   └── rotation.py
+│   └── validators
+│       ├── __init__.py
+│       └── rotation_validator.py
+├── tests
+│   ├── __init__.py
+│   ├── test_generators
+│   │   ├── __init__.py
+│   │   └── test_rotation_generator.py
+│   ├── test_managers
+│   │   ├── __init__.py
+│   │   ├── test_cli_manager.py
+│   │   ├── test_database_manager.py
+│   │   ├── test_display_manager.py
+│   │   ├── test_log_manager.py
+│   │   └── test_rotation_manager.py
+│   ├── test_models
+│   │   ├── __init__.py
+│   │   ├── test_rotation_element.py
+│   │   └── test_rotation.py
+│   └── test_validators
+│       ├── __init__.py
+│       └── test_rotation_validator.py
+└── tree.txt
+
+11 directories, 36 files

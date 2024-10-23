@@ -30,3 +30,8 @@ venv.bak/
 *.swp
 *.swo
 .DS_Store
+coverage_html/
+.coverage
+.coverage
+coverage_html/
+.coveragerc
