@@ -32,3 +32,6 @@ venv.bak/
 .DS_Store
 coverage_html/
 .coverage
+.coverage
+coverage_html/
+.coveragerc
